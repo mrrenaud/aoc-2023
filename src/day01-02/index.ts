@@ -56,7 +56,7 @@ const main = (input: string): string => {
   return sum.toString();
 };
 
-console.log("Day 01 : Calibration values - letters");
+console.log("--- Day 1: Trebuchet?! --- Part Two ---");
 if (main(testInput) !== testOutput) {
   throw new Error("Test failed");
 } else {

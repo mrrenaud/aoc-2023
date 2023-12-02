@@ -25,7 +25,7 @@ const main = (input: Input): number => {
   return possible;
 };
 
-console.log("Day 02 : How much possible ?");
+console.log("--- Day 2: Cube Conundrum --- Part One ---");
 if (main(testInput) !== testOutput) {
   throw new Error("Test failed");
 } else {
