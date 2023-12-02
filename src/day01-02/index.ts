@@ -26,17 +26,13 @@ const parseNumber = (value: string): number => {
 };
 
 function findOverlappingNumbers(text: string) {
-  const pattern = /(?=(one|two|three|four|five|six|seven|eight|nine|\d))/g;
+  const pattern = /one|two|three|four|five|six|seven|eight|nine|\d/g;
   const matches = [];
 
   let match;
   while ((match = pattern.exec(text)) !== null) {
-    // Avoid infinite loops with zero-width matches
-    if (match.index === pattern.lastIndex) {
-      pattern.lastIndex++;
-    }
-
-    matches.push(match[1]);
+    matches.push(match[0]);
+    pattern.lastIndex = match.index! + 1;
   }
 
   return matches;
