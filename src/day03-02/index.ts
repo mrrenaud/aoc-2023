@@ -5,7 +5,7 @@ interface Gear {
   ratio: number;
 }
 
-const isValid = (
+const hasValidGearCoordinates = (
   lineIndex: number,
   charStart: number,
   lenght: number,
@@ -49,7 +49,7 @@ const main = (input: string): number => {
 
     let partNumber;
     while ((partNumber = pattern.exec(line)) !== null) {
-      const coordinates = isValid(
+      const coordinates = hasValidGearCoordinates(
         lineIndex,
         partNumber.index,
         partNumber[0].length,
