@@ -5,15 +5,18 @@ const main = (input: string): number => {
 
   return lines
     .reduce((cards, line, index) => {
+      // Getting numbers in 2d array [[winning numbers], [game numbers]]
       const game = line
         .split(":")[1]
         .split("|")
         .map((set) => set.match(/\d+/g)!.map((number) => parseInt(number)));
 
+      // keeping only winning numbers
       const winningNumbers = game[1].filter((n) => game[0].indexOf(n) >= 0);
 
       if (winningNumbers.length === 0) return cards;
 
+      // Adding new cards to the array
       for (let i = index + 1; i < index + 1 + winningNumbers.length; i++) {
         cards[i] = cards[i] + cards[index];
       }
